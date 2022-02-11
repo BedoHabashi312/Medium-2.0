@@ -58,7 +58,6 @@ function Post({ post }: Props) {
 
             <div className="mt-10">
                 <PortableText
-                    className=""
                     dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
                     projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
                     content={post.body}
@@ -92,7 +91,7 @@ function Post({ post }: Props) {
         ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-10 max-w-2xl mx-auto mb-10">
                 <h3 className="text-sm text-yellow-500">Enjoyed this article?</h3>
-                <h4 className="text-3xl font-bold">Leave a commentt below!</h4>
+                <h4 className="text-3xl font-bold">Leave a comment below!</h4>
                 <hr className="py-3 mt-2" />
 
                 <input
