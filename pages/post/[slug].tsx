@@ -5,6 +5,7 @@ import { sanityClient, urlFor } from "../../sanity";
 import { Post } from "../../typings";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
+import Head from "next/head";
 
 interface IFormInput {
     _id: string;
@@ -43,6 +44,10 @@ function Post({ post }: Props) {
 
     return <main>
         <Header />
+        <Head>
+            <title>{post.title}</title>
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
         <img className="w-full h-48 object-cover" src={urlFor(post.mainImage).url()!} alt="" />
         <article className="max-w-3xl mx-auto p-5">
             <h1 className="text-3xl mt-18 mb-3">{post.title}</h1>
@@ -145,14 +150,14 @@ function Post({ post }: Props) {
         )}
         {/* Comments */}
 
-        <div className = "flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
-            <h3 className = "text-4xl">Comments</h3>
-            <hr className = "pb-2"/>
+        <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-yellow-500 shadow space-y-2">
+            <h3 className="text-4xl">Comments</h3>
+            <hr className="pb-2" />
 
             {post.comments.map((comment) => (
                 <div key={comment._id}>
                     <p>
-                        <span className = "text-yellow-500">{comment.name}:</span> {comment.comment}
+                        <span className="text-yellow-500">{comment.name}:</span> {comment.comment}
                     </p>
                 </div>
             ))}
