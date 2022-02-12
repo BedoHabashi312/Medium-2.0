@@ -46,7 +46,7 @@ function Post({ post }: Props) {
         <Header />
         <Head>
             <title>{post.title}</title>
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href="/medium.png" />
         </Head>
         <img className="w-full h-48 object-cover" src={urlFor(post.mainImage).url()!} alt="" />
         <article className="max-w-3xl mx-auto p-5">
